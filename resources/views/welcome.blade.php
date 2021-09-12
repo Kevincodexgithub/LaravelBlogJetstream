@@ -23,6 +23,7 @@
 </head>
 @php
 $color = 'blue';
+$alert = 'alert2';
 @endphp
 
 <body>
@@ -35,18 +36,21 @@ $color = 'blue';
             beatae nobis consequatur doloribus repudiandae, veritatis, nihil voluptas obcaecati blanditiis
             exercitationem eveniet suscipit fugiat quis aliquid?
         </x-alert>
-        <x-alert class="mb-8">
+        <x-alert2 color="blue" class="mb-4">
             <x-slot name="title">
-                titulo 2
+                Titulo Prrom
             </x-slot>
-            hola prro
-        </x-alert>
-        <x-alert color="pink">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente cum odio repellendus dolorum totam
+            doloremque ipsam, velit accusantium, vero nesciunt quos officiis amet voluptates quidem repudiandae ipsum!
+            Non, similique dolores?
+        </x-alert2>
+
+        <x-dynamic-component :component="$alert">
             <x-slot name="title">
-                titulo 3
+                Titulo de alerta dinamica
             </x-slot>
-            hola gato feo
-        </x-alert>
+            contenido de alerta dinamica
+        </x-dynamic-component>
     </div>
 </body>
 
