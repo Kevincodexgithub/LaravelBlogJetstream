@@ -67,4 +67,17 @@ class User extends Authenticatable
         // $profile = Profile::where('user_id', $this->id)->first();
         return $this->hasOne('App\Models\Profile');
     }
+
+    /**
+     * TODO: Relacion uno a muchos
+     */
+    public function posts()
+    {
+        return $this->hasMany('App\Models\Post');
+    }
+
+    public function videos()
+    {
+        return $this->hasMany('App\Models\Video');
+    }
 }
