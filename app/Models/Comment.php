@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Video extends Model
+class Comment extends Model
 {
     use HasFactory;
 
@@ -18,10 +18,10 @@ class Video extends Model
     }
 
     /**
-     * TODO: Relacion uno a muchos polimorfica
+     * TODO: Relacion polimorfica
      */
-    public function comments()
+    public function commentable()
     {
-        return $this->morphMany('App\Models\Comment', 'commentable');
+        return $this->morphTo(); //con esto se especifica que la tabla comment es una tabla polimorfica
     }
 }

@@ -81,6 +81,11 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Video');
     }
 
+    public function comments()
+    {
+        return $this->hasMany('App\Models\Comment');
+    }
+
     /**
      * TODO: Relacion muchos a muchos
      */
@@ -93,7 +98,8 @@ class User extends Authenticatable
      * TODO: Relacion uno a uno polimorfica
      */
 
-     public function image(){
-         return $this->morphOne('App\Models\Image','imageable');
-     }
+    public function image()
+    {
+        return $this->morphOne('App\Models\Image', 'imageable');
+    }
 }
